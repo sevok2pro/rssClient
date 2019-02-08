@@ -40,6 +40,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-Oc-wn2">
+                                <rect key="frame" x="16" y="260" width="343" height="387"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NZE-S6-5al"/>
@@ -48,6 +52,7 @@
                         <outlet property="button" destination="Epk-ao-rV7" id="oES-AE-2oC"/>
                         <outlet property="entryText" destination="iRg-nY-tT3" id="nxD-we-fdA"/>
                         <outlet property="label" destination="xIy-rt-oum" id="bfN-L1-fou"/>
+                        <outlet property="noteList" destination="kq0-Oc-wn2" id="6QF-sh-QXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjB-0k-Eo4" userLabel="First Responder" sceneMemberID="firstResponder"/>

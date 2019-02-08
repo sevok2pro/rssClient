@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var entryText: UITextField!
+    @IBOutlet weak var noteList: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,10 @@ class ViewController: UIViewController {
     
     @IBAction func onTapButton(_ sender: UIButton) {
         label.text = entryText.text;
+        let note = UILabel();
+        note.text = entryText.text;
+        noteList.addArrangedSubview(note);
         entryText.text = "";
-    }
+    };
 }
 
