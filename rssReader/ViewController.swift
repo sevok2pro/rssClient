@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var entryText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onTapButton(_ sender: UIButton) {
-        label.text = "LOL!"
+        label.text = entryText.text;
+        entryText.text = "";
     }
 }
 

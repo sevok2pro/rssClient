@@ -26,19 +26,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epk-ao-rV7">
-                                <rect key="frame" x="16" y="172" width="343" height="44"/>
+                                <rect key="frame" x="16" y="208" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="onTapButton:" destination="XyR-9x-fBQ" eventType="touchDown" id="1jP-Ya-mfp"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iRg-nY-tT3">
+                                <rect key="frame" x="16" y="170" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NZE-S6-5al"/>
                     </view>
                     <connections>
                         <outlet property="button" destination="Epk-ao-rV7" id="oES-AE-2oC"/>
+                        <outlet property="entryText" destination="iRg-nY-tT3" id="nxD-we-fdA"/>
                         <outlet property="label" destination="xIy-rt-oum" id="bfN-L1-fou"/>
                     </connections>
                 </viewController>
