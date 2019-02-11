@@ -2,30 +2,30 @@
 //  ViewController.swift
 //  rssReader
 //
-//  Created by Vsevolod Liberov on 08/02/2019.
+//  Created by Vsevolod Liberov on 11/02/2019.
 //  Copyright © 2019 Seva. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var entryText: UITextField!
-    @IBOutlet weak var noteList: UIStackView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        print("view did load!")
+
+        // Do any additional setup after loading the view.
+        print("View did load")
     }
     
-    @IBAction func onTapButton(_ sender: UIButton) {
-        label.text = entryText.text;
-        let note = UILabel();
-        note.text = entryText.text;
-        noteList.addArrangedSubview(note);
-        entryText.text = "";
-    };
-}
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
