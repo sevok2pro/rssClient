@@ -10,11 +10,12 @@ import UIKit
 
 class NoteListTableViewController: UITableViewController {
 
-    var notes: [String] = ["one", "two", "three"];
+    lazy var notes: Array<String> = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.notes = notesStorage.getNotes().map{ note in note.text }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
