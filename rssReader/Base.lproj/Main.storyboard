@@ -9,16 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="Gq5-Kb-72r">
-            <objects>
-                <viewController id="Bj7-WC-jG9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="0Wx-hC-Npd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b5q-8W-rAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1753" y="166"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Eol-jF-edX">
             <objects>
@@ -29,18 +19,18 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Bj7-WC-jG9" kind="relationship" relationship="viewControllers" id="sul-HY-2V0"/>
                         <segue destination="I6a-qh-Kuu" kind="relationship" relationship="viewControllers" id="ba3-EZ-oe5"/>
+                        <segue destination="iCU-nF-Tqj" kind="relationship" relationship="viewControllers" id="BtX-EZ-gwQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI5-cQ-vTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="383" y="-259"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="fHD-IM-vhe">
             <objects>
-                <tableViewController id="I6a-qh-Kuu" customClass="NoteListTableViewController" customModule="rssReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="News" id="I6a-qh-Kuu" customClass="NoteListTableViewController" customModule="rssReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="i7Y-6m-9fZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,12 +62,54 @@
                             <outlet property="delegate" destination="I6a-qh-Kuu" id="p6Z-Yb-faR"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="PEU-e9-Wvh"/>
+                    <tabBarItem key="tabBarItem" title="Новости" id="PEU-e9-Wvh"/>
                     <navigationItem key="navigationItem" id="IgP-2J-iSY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNe-96-AqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="-554"/>
+            <point key="canvasLocation" x="1689" y="-547"/>
+        </scene>
+        <!--Subscribtions-->
+        <scene sceneID="SmX-55-TpF">
+            <objects>
+                <tableViewController title="Subscribtions" id="iCU-nF-Tqj" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gW7-Y0-XqF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RKk-UD-Elb">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKk-UD-Elb" id="Q61-Qc-Oaa">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wx-Ek-DfG">
+                                            <rect key="frame" x="10" y="6" width="49" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSO-Lo-COq">
+                                            <rect key="frame" x="72" y="6" width="287" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iCU-nF-Tqj" id="6BF-uT-dED"/>
+                            <outlet property="delegate" destination="iCU-nF-Tqj" id="iDg-3j-mlC"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Подписки" id="0Ja-1N-iQi"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcB-Sg-zzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679.2" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
