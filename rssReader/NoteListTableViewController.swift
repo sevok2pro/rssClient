@@ -9,6 +9,7 @@
 import UIKit
 
 class NoteListTableViewController: UITableViewController {
+
     var notes: Array<String> = [];
     
     override func viewDidLoad() {

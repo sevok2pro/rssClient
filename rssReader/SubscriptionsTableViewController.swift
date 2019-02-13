@@ -40,6 +40,9 @@ class SubscriptionsTableViewController: UITableViewController {
             fatalError("can not find cell with identity subscriptionCell");
         }
         cell.name.text = subscriptions[indexPath.row];
+        cell.uid = subscriptions[indexPath.row];
+        cell.switch.setOn(userData.subscriptionsStorage.checkSubscription(uid: subscriptions[indexPath.row]), animated: false);
+        
         return cell
     }
     

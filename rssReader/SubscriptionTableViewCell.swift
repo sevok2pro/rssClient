@@ -11,6 +11,7 @@ import UIKit
 class SubscriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var `switch`: UISwitch!
     @IBOutlet weak var name: UILabel!
+    var uid: String = "";
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +23,13 @@ class SubscriptionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func onSwitch(_ sender: UISwitch) {
+        if(self.uid != "") {
+            self.switch.isOn
+                ? userData.subscriptionsStorage.addSubscription(uid: self.uid)
+                : userData.subscriptionsStorage.removeSubscription(uid: self.uid)
+        }
+    }
+    
 }

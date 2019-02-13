@@ -19,7 +19,7 @@ class Note {
 class NotesStorage {
     var notes: [Note] = [Note(text: "lol")]
     func getNotes() -> Array<Note> {
-        return self.notes
+        return notes
     }
 }
 
