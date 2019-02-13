@@ -72,13 +72,13 @@
         <!--Subscribtions-->
         <scene sceneID="SmX-55-TpF">
             <objects>
-                <tableViewController title="Subscribtions" id="iCU-nF-Tqj" sceneMemberID="viewController">
+                <tableViewController title="Subscribtions" id="iCU-nF-Tqj" customClass="SubscriptionsTableViewController" customModule="rssReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gW7-Y0-XqF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RKk-UD-Elb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subscriptionCell" id="RKk-UD-Elb" customClass="SubscriptionTableViewCell" customModule="rssReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKk-UD-Elb" id="Q61-Qc-Oaa">
@@ -98,6 +98,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="mSO-Lo-COq" id="Vwe-P3-vui"/>
+                                    <outlet property="switch" destination="5wx-Ek-DfG" id="VzI-BO-IKl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

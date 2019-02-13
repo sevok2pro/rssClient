@@ -1,20 +1,19 @@
 //
-//  NoteListTableViewController.swift
+//  SubscriptionsTableViewController.swift
 //  rssReader
 //
-//  Created by Vsevolod Liberov on 11/02/2019.
+//  Created by Vsevolod Liberov on 13/02/2019.
 //  Copyright © 2019 Seva. All rights reserved.
 //
 
 import UIKit
 
-class NoteListTableViewController: UITableViewController {
-    var notes: Array<String> = [];
+class SubscriptionsTableViewController: UITableViewController {
+    var subscriptions: Array<String> = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.notes = notesStorage.getNotes().map{ note in note.text }
-        
+        self.subscriptions = subscriptionsDataProvider.getAvailableSubscriptions().map { next in next.name };
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,15 +30,16 @@ class NoteListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return notes.count
+        return subscriptions.count
     }
 
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteListTableViewCell", for: indexPath) as? NoteCellTableViewCell else {
-            fatalError("can not view this cell type")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionCell", for: indexPath) as? SubscriptionTableViewCell else {
+            fatalError("can not find cell with identity subscriptionCell");
         }
-        cell.mainLabel.text = self.notes[indexPath.row]
+        cell.name.text = subscriptions[indexPath.row];
         return cell
     }
     
