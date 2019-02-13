@@ -20,9 +20,13 @@
 		E776CA33220D5E0F004694EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E776CA31220D5E0F004694EB /* Main.storyboard */; };
 		E776CA35220D5E12004694EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E776CA34220D5E12004694EB /* Assets.xcassets */; };
 		E776CA38220D5E12004694EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E776CA36220D5E12004694EB /* LaunchScreen.storyboard */; };
+		E7AAEFD75B3B33FF4FB83AA7 /* Pods_rssReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5508F8B9BF934C4F7B7F49 /* Pods_rssReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15F0810D73DBC6602AF7BA9A /* Pods-rssReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader.debug.xcconfig"; path = "Target Support Files/Pods-rssReader/Pods-rssReader.debug.xcconfig"; sourceTree = "<group>"; };
+		6EF006E0CCDC1D036510CC0F /* Pods-rssReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader.release.xcconfig"; path = "Target Support Files/Pods-rssReader/Pods-rssReader.release.xcconfig"; sourceTree = "<group>"; };
+		DE5508F8B9BF934C4F7B7F49 /* Pods_rssReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E757899D2211A8D9003D85AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E757899F2211AAB7003D85AA /* NoteCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellTableViewCell.swift; sourceTree = "<group>"; };
 		E75789A12211ACC3003D85AA /* NoteListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewController.swift; sourceTree = "<group>"; };
@@ -45,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7AAEFD75B3B33FF4FB83AA7 /* Pods_rssReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DC3C1740994CF8F923C291B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE5508F8B9BF934C4F7B7F49 /* Pods_rssReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B09DE3B2BC66ED485F1C36AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15F0810D73DBC6602AF7BA9A /* Pods-rssReader.debug.xcconfig */,
+				6EF006E0CCDC1D036510CC0F /* Pods-rssReader.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E776CA21220D5E0F004694EB = {
 			isa = PBXGroup;
 			children = (
 				E776CA2C220D5E0F004694EB /* rssReader */,
 				E776CA2B220D5E0F004694EB /* Products */,
+				B09DE3B2BC66ED485F1C36AD /* Pods */,
+				0DC3C1740994CF8F923C291B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +120,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E776CA3C220D5E12004694EB /* Build configuration list for PBXNativeTarget "rssReader" */;
 			buildPhases = (
+				BFF692157B71DF56B805AC82 /* [CP] Check Pods Manifest.lock */,
 				E776CA26220D5E0F004694EB /* Sources */,
 				E776CA27220D5E0F004694EB /* Frameworks */,
 				E776CA28220D5E0F004694EB /* Resources */,
@@ -153,6 +179,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFF692157B71DF56B805AC82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rssReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E776CA26220D5E0F004694EB /* Sources */ = {
@@ -312,6 +363,7 @@
 		};
 		E776CA3D220D5E12004694EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15F0810D73DBC6602AF7BA9A /* Pods-rssReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -330,6 +382,7 @@
 		};
 		E776CA3E220D5E12004694EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF006E0CCDC1D036510CC0F /* Pods-rssReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
