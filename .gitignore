@@ -1,4 +1,5 @@
 # ignore personal user data
 rssReader.xcodeproj/project.xcworkspace/xcuserdata/
+rssReader.xcodeproj/xcuserdata/
 # ignore artefacts
 .build
