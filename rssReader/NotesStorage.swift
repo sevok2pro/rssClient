@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class Note {
     var text: String
@@ -17,9 +18,22 @@ class Note {
 }
 
 class NotesStorage {
-    var notes: [Note] = [Note(text: "lol")]
+    var notes: Array<Note> = []
+    var notesSubject: BehaviorSubject<Array<Note>> = BehaviorSubject(value : []);
+    
+    init() {
+        _ = Observable<Int>.interval(2.0, scheduler: MainScheduler.instance)
+            .subscribe(
+                onNext: {next in self.notesSubject.onNext([Note(text: String(next))])}
+            )
+    }
+    
     func getNotes() -> Array<Note> {
         return notes
+    }
+    
+    func observeNotes() -> Observable<Array<Note>> {
+        return self.notesSubject.asObserver();
     }
 }
 

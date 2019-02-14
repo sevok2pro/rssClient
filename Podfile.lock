@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 4bdb9e76e5e1c44ed6099e20440df1977b54a73d
+PODS:
+  - RxAtomic (4.4.1)
+  - RxSwift (4.4.1):
+    - RxAtomic (~> 4.4)
+
+DEPENDENCIES:
+  - RxSwift (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxAtomic
+    - RxSwift
+
+SPEC CHECKSUMS:
+  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
+  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+
+PODFILE CHECKSUM: a1e9ba8499ef661d9a2c754d37011268e6fdeac6
 
 COCOAPODS: 1.6.0

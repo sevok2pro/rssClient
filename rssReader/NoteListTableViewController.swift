@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class NoteListTableViewController: UITableViewController {
 
@@ -16,6 +17,12 @@ class NoteListTableViewController: UITableViewController {
         super.viewDidLoad()
         self.notes = notesStorage.getNotes().map{ note in note.text }
         
+        _ = notesStorage
+            .observeNotes()
+            .subscribe(onNext: {next in
+                self.notes = next.map({note in note.text})
+                self.tableView.reloadData();
+            })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
