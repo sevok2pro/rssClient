@@ -15,7 +15,6 @@ class NoteListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.notes = notesStorage.getNotes().map{ note in note.text }
         
         _ = notesStorage
             .observeNotes()

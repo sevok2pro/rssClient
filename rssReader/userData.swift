@@ -7,9 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 class SubscriptionsStorage {
     var subscriptions: Set<String> = [];
+    var subscriptionSubject: BehaviorSubject<Set<String>> = BehaviorSubject(value: [])
+    
+    init() {
+        _ = self.subscriptionSubject.subscribe(onNext: {next in print(next)})
+    }
     
     func getSubscriptions() -> Array<String> {
         return Array(self.subscriptions);
@@ -21,12 +27,16 @@ class SubscriptionsStorage {
     
     func addSubscription(uid: String) -> Void {
         self.subscriptions.insert(uid)
-        print(subscriptions)
+        self.subscriptionSubject.onNext(self.subscriptions)
     }
     
     func removeSubscription(uid: String) -> Void {
         self.subscriptions.remove(uid)
-        print(subscriptions)
+        self.subscriptionSubject.onNext(self.subscriptions)
+    }
+    
+    func observeSubscriptions() -> Observable<Set<String>> {
+        return self.subscriptionSubject.asObservable();
     }
 }
 

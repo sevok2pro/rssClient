@@ -22,14 +22,11 @@ class NotesStorage {
     var notesSubject: BehaviorSubject<Array<Note>> = BehaviorSubject(value : []);
     
     init() {
-        _ = Observable<Int>.interval(2.0, scheduler: MainScheduler.instance)
-            .subscribe(
-                onNext: {next in self.notesSubject.onNext([Note(text: String(next))])}
-            )
-    }
-    
-    func getNotes() -> Array<Note> {
-        return notes
+        let connect = userData.subscriptionsStorage.observeSubscriptions()
+            .map({subscriptionsSet in Array(subscriptionsSet).map({next in Note(text: next)})})
+            .multicast(notesSubject)
+        
+        _ = connect.connect();
     }
     
     func observeNotes() -> Observable<Array<Note>> {
