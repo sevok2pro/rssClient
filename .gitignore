@@ -4,3 +4,4 @@ rssReader.xcworkspace/xcuserdata/
 Pods/Pods.xcodeproj/xcuserdata/
 # ignore artefacts
 .build
+Pods
