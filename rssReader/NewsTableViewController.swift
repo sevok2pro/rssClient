@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class NoteListTableViewController: UITableViewController {
+class NewsTableViewController: UITableViewController {
 
     var notes: Array<String> = [];
     
