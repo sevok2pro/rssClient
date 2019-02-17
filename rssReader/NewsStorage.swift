@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class Note {
+class News {
     var text: String
     
     init(text: String) {
@@ -18,18 +18,18 @@ class Note {
 }
 
 class NewsStorage {
-    var notes: Array<Note> = []
-    var notesSubject: BehaviorSubject<Array<Note>> = BehaviorSubject(value : []);
+    var notes: Array<News> = []
+    var notesSubject: BehaviorSubject<Array<News>> = BehaviorSubject(value : []);
     
     init() {
         let connect = userData.subscriptionsStorage.observeSubscriptions()
-            .map({subscriptionsSet in Array(subscriptionsSet).map({next in Note(text: next)})})
+            .map({subscriptionsSet in Array(subscriptionsSet).map({next in News(text: next)})})
             .multicast(notesSubject)
         
         _ = connect.connect();
     }
     
-    func observeNotes() -> Observable<Array<Note>> {
+    func observeNotes() -> Observable<Array<News>> {
         return self.notesSubject.asObserver();
     }
 }
