@@ -17,7 +17,7 @@ class Note {
     }
 }
 
-class NotesStorage {
+class NewsStorage {
     var notes: Array<Note> = []
     var notesSubject: BehaviorSubject<Array<Note>> = BehaviorSubject(value : []);
     
@@ -34,4 +34,4 @@ class NotesStorage {
     }
 }
 
-let notesStorage = NotesStorage();
+let newsStorage = NewsStorage();

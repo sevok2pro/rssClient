@@ -16,7 +16,7 @@ class NoteListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = notesStorage
+        _ = newsStorage
             .observeNotes()
             .subscribe(onNext: {next in
                 self.notes = next.map({note in note.text})
