@@ -43,7 +43,7 @@ class NoteListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteListTableViewCell", for: indexPath) as? NoteCellTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteListTableViewCell", for: indexPath) as? NewsTableViewCell else {
             fatalError("can not view this cell type")
         }
         cell.mainLabel.text = self.notes[indexPath.row]

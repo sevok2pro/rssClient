@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteCellTableViewCell: UITableViewCell {
+class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var mainLabel: UILabel!
     
     override func awakeFromNib() {
