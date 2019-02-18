@@ -41,7 +41,13 @@ class SubscriptionsStorage {
 }
 
 class UserData {
-    let subscriptionsStorage = SubscriptionsStorage()
+    var subscriptionsStorage: SubscriptionsStorage;
+    
+    init(subscriptionsStorage: SubscriptionsStorage) {
+        self.subscriptionsStorage = subscriptionsStorage
+    }
 }
 
-let userData = UserData();
+let userData = UserData(
+    subscriptionsStorage: SubscriptionsStorage()
+);

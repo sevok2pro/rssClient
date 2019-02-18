@@ -19,11 +19,30 @@ class News {
 
 class NewsStorage {
     var notes: Array<News> = []
-    var notesSubject: BehaviorSubject<Array<News>> = BehaviorSubject(value : []);
+    var notesSubject: PublishSubject<Array<News>> = PublishSubject();
     
-    init() {
+    init(userData: UserData, newsDataProvider: NewsDataProvider) {
         let connect = userData.subscriptionsStorage.observeSubscriptions()
-            .map({subscriptionsSet in Array(subscriptionsSet).map({next in News(text: next)})})
+            .flatMapLatest({(feeds: Set<String>) -> Observable<Array<RssNews>> in
+                if(feeds.count == 0) {
+                    return Observable.just([])
+                } else {
+                    return Observable
+                        .from(feeds.map({(feed: String) -> Observable<RssNews> in
+                            newsDataProvider.observeNews(feed: feed)})
+                        )
+                        .merge()
+                        .scan(
+                            [],
+                            accumulator: { (acc: Array<RssNews>, next: RssNews) -> Array<RssNews> in acc + [next]
+                        })
+                }
+            })
+            .map({(next: Array<RssNews>) -> Array<News> in
+                next.map({(rssNews: RssNews) -> News in
+                    News(text: rssNews.title)
+                }).reversed()
+            })
             .multicast(notesSubject)
         
         _ = connect.connect();
@@ -34,4 +53,4 @@ class NewsStorage {
     }
 }
 
-let newsStorage = NewsStorage();
+let newsStorage = NewsStorage(userData: userData, newsDataProvider: newsDataProvider);
