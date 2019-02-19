@@ -15,13 +15,14 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         _ = newsStorage
             .observeNotes()
             .subscribe(onNext: {next in
                 self.notes = next.map({note in note.text})
                 self.tableView.reloadData();
             })
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
