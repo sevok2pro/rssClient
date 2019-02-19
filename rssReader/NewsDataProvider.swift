@@ -18,8 +18,8 @@ class RssNews {
     init(titleSalt: Int, feed: String) {
         self.title = "News from feed: \(feed), order: \(String(titleSalt))";
         self.description = "Any description for feed:\(feed)";
-        self.link = "my.com";
-        self.imageLink = "my.com";
+        self.link = "https://ru.wikipedia.org/wiki/Банан";
+        self.imageLink = "https://pp.userapi.com/c845021/v845021237/ae087/mD5Cg-FRsmg.jpg?ava=1";
     }
 }
 
@@ -31,7 +31,6 @@ class NewsDataProvider {
         })) {
             let newsObserver = Observable
                 .interval(1.0, scheduler: MainScheduler.instance)
-                .startWith(-2, -1, 0)
                 .map({ next in RssNews(titleSalt: next, feed: feed) })
                 .replay(20)
             _ = newsObserver.connect();

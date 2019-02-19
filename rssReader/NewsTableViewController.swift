@@ -50,6 +50,19 @@ class NewsTableViewController: UITableViewController {
         let news: RssNews = notes[indexPath.row];
         cell.newsTitle.text = news.title
         cell.newsShortDescription.text = news.description
+        URLSession.shared
+            .dataTask(
+                with: URL(string: news.imageLink)!,
+                completionHandler: {data,response,error  in
+                    if (error != nil){
+                        fatalError("image load broken!")
+                    }
+                    DispatchQueue.main.async() {
+                        cell.newsImage.image = UIImage(data: data!)
+                    }
+                }
+            )
+            .resume()
         return cell
     }
     
