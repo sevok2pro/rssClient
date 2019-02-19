@@ -11,7 +11,7 @@ import RxSwift
 
 class NewsTableViewController: UITableViewController {
 
-    var notes: Array<String> = [];
+    var notes: Array<RssNews> = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class NewsTableViewController: UITableViewController {
         _ = newsStorage
             .observeNotes()
             .subscribe(onNext: {next in
-                self.notes = next.map({note in note.text})
+                self.notes = next;
                 self.tableView.reloadData();
             })
         
@@ -47,8 +47,9 @@ class NewsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteListTableViewCell", for: indexPath) as? NewsTableViewCell else {
             fatalError("can not view this cell type")
         }
-        cell.newsTitle.text = notes[indexPath.row]
-        cell.newsShortDescription.text = notes[indexPath.row]
+        let news: RssNews = notes[indexPath.row];
+        cell.newsTitle.text = news.title
+        cell.newsShortDescription.text = news.description
         return cell
     }
     

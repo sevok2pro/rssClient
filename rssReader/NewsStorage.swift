@@ -9,17 +9,9 @@
 import Foundation
 import RxSwift
 
-class News {
-    var text: String
-    
-    init(text: String) {
-        self.text = text;
-    }
-}
-
 class NewsStorage {
-    var notes: Array<News> = []
-    var notesSubject: PublishSubject<Array<News>> = PublishSubject();
+    var notes: Array<RssNews> = []
+    var notesSubject: PublishSubject<Array<RssNews>> = PublishSubject();
     
     init(userData: UserData, newsDataProvider: NewsDataProvider) {
         let connect = userData.subscriptionsStorage.observeSubscriptions()
@@ -34,21 +26,16 @@ class NewsStorage {
                         .merge()
                         .scan(
                             [],
-                            accumulator: { (acc: Array<RssNews>, next: RssNews) -> Array<RssNews> in acc + [next]
+                            accumulator: { (acc: Array<RssNews>, next: RssNews) -> Array<RssNews> in [next] + acc
                         })
                 }
-            })
-            .map({(next: Array<RssNews>) -> Array<News> in
-                next.map({(rssNews: RssNews) -> News in
-                    News(text: rssNews.title)
-                }).reversed()
             })
             .multicast(notesSubject)
         
         _ = connect.connect();
     }
     
-    func observeNotes() -> Observable<Array<News>> {
+    func observeNotes() -> Observable<Array<RssNews>> {
         return self.notesSubject.asObserver();
     }
 }

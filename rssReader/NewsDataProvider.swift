@@ -17,7 +17,7 @@ class RssNews {
     
     init(titleSalt: Int, feed: String) {
         self.title = "News from feed: \(feed), order: \(String(titleSalt))";
-        self.description = "Any description";
+        self.description = "Any description for feed:\(feed)";
         self.link = "my.com";
         self.imageLink = "my.com";
     }
