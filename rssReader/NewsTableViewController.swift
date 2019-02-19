@@ -46,7 +46,8 @@ class NewsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteListTableViewCell", for: indexPath) as? NewsTableViewCell else {
             fatalError("can not view this cell type")
         }
-        cell.mainLabel.text = self.notes[indexPath.row]
+        cell.newsTitle.text = notes[indexPath.row]
+        cell.newsShortDescription.text = notes[indexPath.row]
         return cell
     }
     
