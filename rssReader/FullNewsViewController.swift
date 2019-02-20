@@ -9,12 +9,14 @@
 import UIKit
 
 class FullNewsViewController: UIViewController {
-    @IBOutlet weak var fullNewsLink: UILabel!
-    var newsLink: String? = nil
+    @IBOutlet weak var webViewPage: UIWebView!
+    
+    var newsLink: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fullNewsLink.text = self.newsLink;
+        let webUrl = URL(string: newsLink.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!);
+        self.webViewPage.loadRequest(URLRequest(url: webUrl!));
     }
     
 
