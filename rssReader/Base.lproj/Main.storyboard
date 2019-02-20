@@ -99,16 +99,16 @@
             </objects>
             <point key="canvasLocation" x="2616.8000000000002" y="-547.37631184407803"/>
         </scene>
-        <!--View Controller-->
+        <!--Full News View Controller-->
         <scene sceneID="rtW-1t-R2M">
             <objects>
-                <viewController id="hWk-ld-Fnc" sceneMemberID="viewController">
+                <viewController id="hWk-ld-Fnc" customClass="FullNewsViewController" customModule="rssReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VTX-Fy-DrN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UN1-4f-dbe">
-                                <rect key="frame" x="153" y="279" width="31" height="21"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -118,6 +118,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QcL-YS-1Y3"/>
                     </view>
+                    <connections>
+                        <outlet property="fullNewsLink" destination="UN1-4f-dbe" id="Twy-dc-sKD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mf6-eD-sfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

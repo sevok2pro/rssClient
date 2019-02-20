@@ -9,11 +9,12 @@
 import UIKit
 
 class FullNewsViewController: UIViewController {
-
+    @IBOutlet weak var fullNewsLink: UILabel!
+    var newsLink: String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.fullNewsLink.text = self.newsLink;
     }
     
 

@@ -43,8 +43,7 @@ class NewsTableViewController: UITableViewController {
 
     func tap(link: String) -> () -> Void {
         func nestedTap() {
-            print(link)
-            self.performSegue(withIdentifier: "showFullNewsSeque", sender: nil)
+            self.performSegue(withIdentifier: "showFullNewsSeque", sender: link)
         }
         
         return nestedTap
@@ -110,14 +109,15 @@ class NewsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let message: String = sender as! String;
+        let destinationViewController: FullNewsViewController = segue.destination as! FullNewsViewController;
+        destinationViewController.newsLink = message
     }
-    */
+ 
 
 }
