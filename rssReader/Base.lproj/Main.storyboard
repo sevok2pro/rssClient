@@ -19,7 +19,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="gqR-lf-A4i" kind="relationship" relationship="viewControllers" id="ba3-EZ-oe5"/>
+                        <segue destination="I6a-qh-Kuu" kind="relationship" relationship="viewControllers" id="zp4-iG-vyW"/>
                         <segue destination="iCU-nF-Tqj" kind="relationship" relationship="viewControllers" id="BtX-EZ-gwQ"/>
                     </connections>
                 </tabBarController>
@@ -91,11 +91,12 @@
                             <outlet property="delegate" destination="I6a-qh-Kuu" id="p6Z-Yb-faR"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Новости" id="DBB-dr-9qb"/>
                     <navigationItem key="navigationItem" title="Новости" id="IgP-2J-iSY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNe-96-AqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="-547.37631184407803"/>
+            <point key="canvasLocation" x="1679" y="-547"/>
         </scene>
         <!--Subscribtions-->
         <scene sceneID="SmX-55-TpF">
@@ -145,25 +146,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcB-Sg-zzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1679.2" y="137.18140929535232"/>
-        </scene>
-        <!--Новости-->
-        <scene sceneID="QgA-35-jji">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gqR-lf-A4i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" id="PEU-e9-Wvh"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctg-9b-iU5">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="I6a-qh-Kuu" kind="relationship" relationship="rootViewController" id="pkH-kt-dnr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c6V-rW-EuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1688.8" y="-547.37631184407803"/>
         </scene>
     </scenes>
 </document>
