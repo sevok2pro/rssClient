@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 
 class NewsTableViewController: UITableViewController {
-
     var notes: Array<RssNews> = [];
     
     override func viewDidLoad() {
@@ -42,14 +41,22 @@ class NewsTableViewController: UITableViewController {
         return notes.count
     }
 
+    func tap(link: String) -> () -> Void {
+        func nestedTap() {
+            print(link)
+        }
+        
+        return nestedTap
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteListTableViewCell", for: indexPath) as? NewsTableViewCell else {
             fatalError("can not view this cell type")
         }
         let news: RssNews = notes[indexPath.row];
-        cell.newsTitle.text = news.title
-        cell.newsShortDescription.text = news.description
+        cell.newsTitle.text = news.title;
+        cell.newsShortDescription.text = news.description;
+        cell.onTapHandler = tap(link: news.link)
         URLSession.shared
             .dataTask(
                 with: URL(string: news.imageLink)!,

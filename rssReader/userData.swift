@@ -13,10 +13,6 @@ class SubscriptionsStorage {
     var subscriptions: Set<String> = [];
     var subscriptionSubject: BehaviorSubject<Set<String>> = BehaviorSubject(value: [])
     
-    init() {
-        _ = self.subscriptionSubject.subscribe(onNext: {next in print(next)})
-    }
-    
     func getSubscriptions() -> Array<String> {
         return Array(self.subscriptions);
     }

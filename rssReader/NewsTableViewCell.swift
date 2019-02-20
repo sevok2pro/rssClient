@@ -13,9 +13,23 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsShortDescription: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     
+    var onTapHandler: (() -> Void)? = nil
+    
+    @objc func tapEdit(_ sender: UITapGestureRecognizer) {
+        if(self.onTapHandler != nil) {
+            self.onTapHandler!()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let gestureRecognizer: UIGestureRecognizer =
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.tapEdit(_:))
+            )
+        self.addGestureRecognizer(gestureRecognizer)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
