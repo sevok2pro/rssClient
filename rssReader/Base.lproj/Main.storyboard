@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +20,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="I6a-qh-Kuu" kind="relationship" relationship="viewControllers" id="ba3-EZ-oe5"/>
+                        <segue destination="gqR-lf-A4i" kind="relationship" relationship="viewControllers" id="ba3-EZ-oe5"/>
                         <segue destination="iCU-nF-Tqj" kind="relationship" relationship="viewControllers" id="BtX-EZ-gwQ"/>
                     </connections>
                 </tabBarController>
@@ -75,7 +76,9 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <gestureRecognizers/>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="newsImage" destination="1v2-CU-5au" id="k7f-l1-kp6"/>
                                     <outlet property="newsShortDescription" destination="rHI-jG-yEQ" id="ce8-0Q-rTg"/>
@@ -86,14 +89,43 @@
                         <connections>
                             <outlet property="dataSource" destination="I6a-qh-Kuu" id="XRc-Bj-1LA"/>
                             <outlet property="delegate" destination="I6a-qh-Kuu" id="p6Z-Yb-faR"/>
+                            <outletCollection property="gestureRecognizers" destination="gIK-7U-86I" appends="YES" id="yIN-75-99Z"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Новости" id="PEU-e9-Wvh"/>
                     <navigationItem key="navigationItem" id="IgP-2J-iSY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNe-96-AqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gIK-7U-86I">
+                    <connections>
+                        <segue destination="Ajq-rR-7W4" kind="show" id="Bq0-jD-8BS"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1688.8" y="-547.37631184407803"/>
+            <point key="canvasLocation" x="2628" y="-547.37631184407803"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O7d-L6-3Oh">
+            <objects>
+                <viewController id="Ajq-rR-7W4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5M8-Ch-sc5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O37-KF-zFZ">
+                                <rect key="frame" x="166" y="323" width="31" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Rq7-OF-XCl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EtG-4w-mXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3536.8000000000002" y="-548.27586206896558"/>
         </scene>
         <!--Subscribtions-->
         <scene sceneID="SmX-55-TpF">
@@ -143,6 +175,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcB-Sg-zzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1679.2" y="137.18140929535232"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="QgA-35-jji">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gqR-lf-A4i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" id="PEU-e9-Wvh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctg-9b-iU5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I6a-qh-Kuu" kind="relationship" relationship="rootViewController" id="pkH-kt-dnr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6V-rW-EuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688.8" y="-547.37631184407803"/>
         </scene>
     </scenes>
 </document>
