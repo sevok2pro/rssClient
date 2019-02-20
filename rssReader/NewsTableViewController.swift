@@ -44,6 +44,7 @@ class NewsTableViewController: UITableViewController {
     func tap(link: String) -> () -> Void {
         func nestedTap() {
             print(link)
+            self.performSegue(withIdentifier: "showFullNewsSeque", sender: nil)
         }
         
         return nestedTap
