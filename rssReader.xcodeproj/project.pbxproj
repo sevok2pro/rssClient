@@ -27,6 +27,7 @@
 		15F0810D73DBC6602AF7BA9A /* Pods-rssReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader.debug.xcconfig"; path = "Target Support Files/Pods-rssReader/Pods-rssReader.debug.xcconfig"; sourceTree = "<group>"; };
 		6EF006E0CCDC1D036510CC0F /* Pods-rssReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader.release.xcconfig"; path = "Target Support Files/Pods-rssReader/Pods-rssReader.release.xcconfig"; sourceTree = "<group>"; };
 		DE5508F8B9BF934C4F7B7F49 /* Pods_rssReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70517D32223BA48007DF013 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E73B2ECB221D545B00506F76 /* FullNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNewsViewController.swift; sourceTree = "<group>"; };
 		E757899F2211AAB7003D85AA /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		E75789A12211ACC3003D85AA /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 				E776CA34220D5E12004694EB /* Assets.xcassets */,
 				E776CA36220D5E12004694EB /* LaunchScreen.storyboard */,
 				E776CA39220D5E12004694EB /* Info.plist */,
+				E70517D32223BA48007DF013 /* README.md */,
 			);
 			path = rssReader;
 			sourceTree = "<group>";
