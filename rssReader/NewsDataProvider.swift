@@ -29,6 +29,7 @@ class RssNews {
 
 class NewsDataProvider {
     var newsCache: Dictionary<String, Observable<RssNews>> = Dictionary()
+    
     func observeNews(feed: String) -> Observable<RssNews> {
         if (!newsCache.keys.contains(where: { (key: String) -> Bool in
             key == feed

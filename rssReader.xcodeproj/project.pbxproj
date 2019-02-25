@@ -14,7 +14,7 @@
 		E758E20A2213DDCB00775AC9 /* SubscriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758E2092213DDCB00775AC9 /* SubscriptionsTableViewController.swift */; };
 		E758E20C2213DE5E00775AC9 /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758E20B2213DE5E00775AC9 /* SubscriptionTableViewCell.swift */; };
 		E758E20E2213E0E500775AC9 /* SubscriptionsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758E20D2213E0E500775AC9 /* SubscriptionsDataProvider.swift */; };
-		E758E2122213E6F200775AC9 /* userData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758E2112213E6F200775AC9 /* userData.swift */; };
+		E758E2122213E6F200775AC9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E758E2112213E6F200775AC9 /* UserData.swift */; };
 		E776CA2E220D5E0F004694EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776CA2D220D5E0F004694EB /* AppDelegate.swift */; };
 		E776CA33220D5E0F004694EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E776CA31220D5E0F004694EB /* Main.storyboard */; };
 		E776CA35220D5E12004694EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E776CA34220D5E12004694EB /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 		E758E2092213DDCB00775AC9 /* SubscriptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsTableViewController.swift; sourceTree = "<group>"; };
 		E758E20B2213DE5E00775AC9 /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		E758E20D2213E0E500775AC9 /* SubscriptionsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsDataProvider.swift; sourceTree = "<group>"; };
-		E758E2112213E6F200775AC9 /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
+		E758E2112213E6F200775AC9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E776CA2A220D5E0F004694EB /* rssReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rssReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E776CA2D220D5E0F004694EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E776CA32220D5E0F004694EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +73,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E70517D12223B212007DF013 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E758E20D2213E0E500775AC9 /* SubscriptionsDataProvider.swift */,
+				E758E2112213E6F200775AC9 /* UserData.swift */,
+				E7BB2F07221987E80005605C /* NewsDataProvider.swift */,
+				E758E2072212C31800775AC9 /* NewsStorage.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		E70517D22223B302007DF013 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E776CA31220D5E0F004694EB /* Main.storyboard */,
+				E757899F2211AAB7003D85AA /* NewsTableViewCell.swift */,
+				E75789A12211ACC3003D85AA /* NewsTableViewController.swift */,
+				E758E2092213DDCB00775AC9 /* SubscriptionsTableViewController.swift */,
+				E758E20B2213DE5E00775AC9 /* SubscriptionTableViewCell.swift */,
+				E73B2ECB221D545B00506F76 /* FullNewsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E776CA21220D5E0F004694EB = {
 			isa = PBXGroup;
 			children = (
@@ -94,20 +119,12 @@
 		E776CA2C220D5E0F004694EB /* rssReader */ = {
 			isa = PBXGroup;
 			children = (
+				E70517D22223B302007DF013 /* View */,
+				E70517D12223B212007DF013 /* Services */,
 				E776CA2D220D5E0F004694EB /* AppDelegate.swift */,
-				E776CA31220D5E0F004694EB /* Main.storyboard */,
 				E776CA34220D5E12004694EB /* Assets.xcassets */,
 				E776CA36220D5E12004694EB /* LaunchScreen.storyboard */,
 				E776CA39220D5E12004694EB /* Info.plist */,
-				E757899F2211AAB7003D85AA /* NewsTableViewCell.swift */,
-				E75789A12211ACC3003D85AA /* NewsTableViewController.swift */,
-				E758E2072212C31800775AC9 /* NewsStorage.swift */,
-				E758E2092213DDCB00775AC9 /* SubscriptionsTableViewController.swift */,
-				E758E20B2213DE5E00775AC9 /* SubscriptionTableViewCell.swift */,
-				E758E20D2213E0E500775AC9 /* SubscriptionsDataProvider.swift */,
-				E758E2112213E6F200775AC9 /* userData.swift */,
-				E7BB2F07221987E80005605C /* NewsDataProvider.swift */,
-				E73B2ECB221D545B00506F76 /* FullNewsViewController.swift */,
 			);
 			path = rssReader;
 			sourceTree = "<group>";
@@ -242,7 +259,7 @@
 				E75789A22211ACC3003D85AA /* NewsTableViewController.swift in Sources */,
 				E73B2ECC221D545B00506F76 /* FullNewsViewController.swift in Sources */,
 				E7BB2F08221987E80005605C /* NewsDataProvider.swift in Sources */,
-				E758E2122213E6F200775AC9 /* userData.swift in Sources */,
+				E758E2122213E6F200775AC9 /* UserData.swift in Sources */,
 				E758E20E2213E0E500775AC9 /* SubscriptionsDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
