@@ -90,13 +90,29 @@
 			isa = PBXGroup;
 			children = (
 				E776CA31220D5E0F004694EB /* Main.storyboard */,
-				E757899F2211AAB7003D85AA /* NewsTableViewCell.swift */,
-				E75789A12211ACC3003D85AA /* NewsTableViewController.swift */,
-				E758E2092213DDCB00775AC9 /* SubscriptionsTableViewController.swift */,
-				E758E20B2213DE5E00775AC9 /* SubscriptionTableViewCell.swift */,
-				E73B2ECB221D545B00506F76 /* FullNewsViewController.swift */,
+				E70517D52223C799007DF013 /* News */,
+				E70517D62223C7D1007DF013 /* Subscriptions */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E70517D52223C799007DF013 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				E73B2ECB221D545B00506F76 /* FullNewsViewController.swift */,
+				E757899F2211AAB7003D85AA /* NewsTableViewCell.swift */,
+				E75789A12211ACC3003D85AA /* NewsTableViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		E70517D62223C7D1007DF013 /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				E758E2092213DDCB00775AC9 /* SubscriptionsTableViewController.swift */,
+				E758E20B2213DE5E00775AC9 /* SubscriptionTableViewCell.swift */,
+			);
+			path = Subscriptions;
 			sourceTree = "<group>";
 		};
 		E776CA21220D5E0F004694EB = {
