@@ -11,7 +11,7 @@ import RxSwift
 
 class NewsStorage {
     var notes: Array<RssNews> = []
-    var notesSubject: PublishSubject<Array<RssNews>> = PublishSubject();
+    var newsSubject: PublishSubject<Array<RssNews>> = PublishSubject();
     
     init(userData: UserData, newsDataProvider: NewsDataProvider) {
         let connect = userData.subscriptionsStorage.observeSubscriptions()
@@ -30,13 +30,13 @@ class NewsStorage {
                         })
                 }
             })
-            .multicast(notesSubject)
+            .multicast(newsSubject)
         
         _ = connect.connect();
     }
     
     func observeNotes() -> Observable<Array<RssNews>> {
-        return self.notesSubject.asObserver();
+        return self.newsSubject.asObserver();
     }
 }
 

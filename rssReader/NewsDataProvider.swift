@@ -14,12 +14,16 @@ class RssNews {
     var description: String;
     var link: String;
     var imageLink: String;
+    var uid: String;
+    var date: Date;
     
     init(titleSalt: Int, feed: String) {
         self.title = "News from feed: \(feed), order: \(String(titleSalt))";
         self.description = "Any description for feed:\(feed)";
         self.link = "https://ru.wikipedia.org/wiki/Банан";
         self.imageLink = "https://pp.userapi.com/c845021/v845021237/ae087/mD5Cg-FRsmg.jpg?ava=1";
+        self.uid = NSUUID().uuidString;
+        self.date = Date();
     }
 }
 
