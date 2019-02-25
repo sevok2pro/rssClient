@@ -8,12 +8,7 @@
 
 import Foundation
 
-protocol SubscriptionProtocol {
-    var name: String { get }
-    var describe: String { get }
-}
-
-class Subscription: SubscriptionProtocol {
+class Subscription {
     var name: String;
     var describe: String;
     init(name: String) {
@@ -22,13 +17,9 @@ class Subscription: SubscriptionProtocol {
     }
 }
 
-func makeSubscription(name: String) -> SubscriptionProtocol {
-    return Subscription(name: name)
-}
-
 class SubscriptionsDataProvider {
-    func getAvailableSubscriptions() -> Array<SubscriptionProtocol> {
-        return ["one", "two", "three"].map { next in makeSubscription(name: next)}
+    func getAvailableSubscriptions() -> Array<Subscription> {
+        return ["one", "two", "three"].map { next in Subscription(name: next) }
     }
 }
 

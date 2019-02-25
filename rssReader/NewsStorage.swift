@@ -14,7 +14,7 @@ class NewsStorage {
     var newsSubject: PublishSubject<Array<RssNews>> = PublishSubject();
     
     init(userData: UserData, newsDataProvider: NewsDataProvider) {
-        let connect = userData.subscriptionsStorage.observeSubscriptions()
+        let connect = userData.userSubscriptionsStorage.observeSubscriptions()
             .flatMapLatest({(feeds: Set<String>) -> Observable<Array<RssNews>> in
                 if(feeds.count == 0) {
                     return Observable.just([])

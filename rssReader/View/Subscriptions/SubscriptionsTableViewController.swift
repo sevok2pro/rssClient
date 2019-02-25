@@ -13,7 +13,15 @@ class SubscriptionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.subscriptions = subscriptionsDataProvider.getAvailableSubscriptions().map { next in next.name };
+        
+        _ = subscriptionsStorage.observeAvailableSubscriptions()
+            .map({subscriptions in
+                return subscriptions.map({next in next.name})
+            })
+            .subscribe(onNext: {next in
+                self.subscriptions = next;
+                self.tableView.reloadData();
+            })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,7 +49,7 @@ class SubscriptionsTableViewController: UITableViewController {
         }
         cell.name.text = subscriptions[indexPath.row];
         cell.uid = subscriptions[indexPath.row];
-        cell.switch.setOn(userData.subscriptionsStorage.checkSubscription(uid: subscriptions[indexPath.row]), animated: false);
+        cell.switch.setOn(userData.userSubscriptionsStorage.checkSubscription(uid: subscriptions[indexPath.row]), animated: false);
         
         return cell
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70517D82223D229007DF013 /* AddSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70517D72223D229007DF013 /* AddSubscriptionViewController.swift */; };
+		E70517DC2223F4F3007DF013 /* SubscriptionsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70517DB2223F4F3007DF013 /* SubscriptionsStorage.swift */; };
 		E73B2ECC221D545B00506F76 /* FullNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B2ECB221D545B00506F76 /* FullNewsViewController.swift */; };
 		E75789A02211AAB7003D85AA /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757899F2211AAB7003D85AA /* NewsTableViewCell.swift */; };
 		E75789A22211ACC3003D85AA /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75789A12211ACC3003D85AA /* NewsTableViewController.swift */; };
@@ -28,6 +30,8 @@
 		6EF006E0CCDC1D036510CC0F /* Pods-rssReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rssReader.release.xcconfig"; path = "Target Support Files/Pods-rssReader/Pods-rssReader.release.xcconfig"; sourceTree = "<group>"; };
 		DE5508F8B9BF934C4F7B7F49 /* Pods_rssReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rssReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E70517D32223BA48007DF013 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E70517D72223D229007DF013 /* AddSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscriptionViewController.swift; sourceTree = "<group>"; };
+		E70517DB2223F4F3007DF013 /* SubscriptionsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsStorage.swift; sourceTree = "<group>"; };
 		E73B2ECB221D545B00506F76 /* FullNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNewsViewController.swift; sourceTree = "<group>"; };
 		E757899F2211AAB7003D85AA /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		E75789A12211ACC3003D85AA /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 				E758E2112213E6F200775AC9 /* UserData.swift */,
 				E7BB2F07221987E80005605C /* NewsDataProvider.swift */,
 				E758E2072212C31800775AC9 /* NewsStorage.swift */,
+				E70517DB2223F4F3007DF013 /* SubscriptionsStorage.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			children = (
 				E758E2092213DDCB00775AC9 /* SubscriptionsTableViewController.swift */,
 				E758E20B2213DE5E00775AC9 /* SubscriptionTableViewCell.swift */,
+				E70517D72223D229007DF013 /* AddSubscriptionViewController.swift */,
 			);
 			path = Subscriptions;
 			sourceTree = "<group>";
@@ -273,7 +279,9 @@
 				E75789A02211AAB7003D85AA /* NewsTableViewCell.swift in Sources */,
 				E758E20C2213DE5E00775AC9 /* SubscriptionTableViewCell.swift in Sources */,
 				E776CA2E220D5E0F004694EB /* AppDelegate.swift in Sources */,
+				E70517D82223D229007DF013 /* AddSubscriptionViewController.swift in Sources */,
 				E758E2082212C31800775AC9 /* NewsStorage.swift in Sources */,
+				E70517DC2223F4F3007DF013 /* SubscriptionsStorage.swift in Sources */,
 				E75789A22211ACC3003D85AA /* NewsTableViewController.swift in Sources */,
 				E73B2ECC221D545B00506F76 /* FullNewsViewController.swift in Sources */,
 				E7BB2F08221987E80005605C /* NewsDataProvider.swift in Sources */,

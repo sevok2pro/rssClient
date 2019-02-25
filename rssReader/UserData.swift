@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class SubscriptionsStorage {
+class UserSubscriptionsStorage {
     var subscriptions: Set<String> = [];
     var subscriptionSubject: BehaviorSubject<Set<String>> = BehaviorSubject(value: [])
     
@@ -37,13 +37,13 @@ class SubscriptionsStorage {
 }
 
 class UserData {
-    var subscriptionsStorage: SubscriptionsStorage;
+    var userSubscriptionsStorage: UserSubscriptionsStorage;
     
-    init(subscriptionsStorage: SubscriptionsStorage) {
-        self.subscriptionsStorage = subscriptionsStorage
+    init(userSubscriptionsStorage: UserSubscriptionsStorage) {
+        self.userSubscriptionsStorage = userSubscriptionsStorage
     }
 }
 
 let userData = UserData(
-    subscriptionsStorage: SubscriptionsStorage()
+    userSubscriptionsStorage: UserSubscriptionsStorage()
 );

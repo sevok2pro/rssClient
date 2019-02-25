@@ -27,8 +27,8 @@ class SubscriptionTableViewCell: UITableViewCell {
     @IBAction func onSwitch(_ sender: UISwitch) {
         if(self.uid != "") {
             self.switch.isOn
-                ? userData.subscriptionsStorage.addSubscription(uid: self.uid)
-                : userData.subscriptionsStorage.removeSubscription(uid: self.uid)
+                ? userData.userSubscriptionsStorage.addSubscription(uid: self.uid)
+                : userData.userSubscriptionsStorage.removeSubscription(uid: self.uid)
         }
     }
     

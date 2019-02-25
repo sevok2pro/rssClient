@@ -170,7 +170,7 @@
                     <navigationItem key="navigationItem" title="Подписки" id="5ne-yJ-CoO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CXn-l4-suj">
                             <connections>
-                                <segue destination="QvV-Is-BkV" kind="show" id="JIK-no-Lf2"/>
+                                <segue destination="dRd-4l-ydb" kind="presentation" id="JIK-no-Lf2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -182,17 +182,63 @@
         <!--Добавить источник-->
         <scene sceneID="n6k-qr-t4z">
             <objects>
-                <viewController title="Добавить источник" id="QvV-Is-BkV" sceneMemberID="viewController">
+                <viewController title="Добавить источник" id="QvV-Is-BkV" customClass="AddSubscriptionViewController" customModule="rssReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PSO-GY-UtT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="QGG-go-nwu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название источника:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFh-Se-ETu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="e0u-m6-IC8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vz-k4-cHG">
+                                        <rect key="frame" x="0.0" y="70" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fyX-U5-vOu"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="bIR-Bn-y9t" firstAttribute="top" secondItem="QGG-go-nwu" secondAttribute="bottom" constant="-110" id="8WN-f4-Hzb"/>
+                            <constraint firstItem="QGG-go-nwu" firstAttribute="leading" secondItem="PSO-GY-UtT" secondAttribute="leading" id="Oar-GB-jc4"/>
+                            <constraint firstItem="QGG-go-nwu" firstAttribute="width" secondItem="bIR-Bn-y9t" secondAttribute="width" id="uDo-fx-PIP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bIR-Bn-y9t"/>
                     </view>
+                    <navigationItem key="navigationItem" id="DiT-xj-ZBR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3Fr-Xt-5FI">
+                            <connections>
+                                <action selector="tapCancel:" destination="QvV-Is-BkV" id="pag-e8-guW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="glH-MR-iQh">
+                            <connections>
+                                <action selector="tapSave:" destination="QvV-Is-BkV" id="Epr-9k-2T7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="subscriptionName" destination="9vz-k4-cHG" id="lxt-Kc-Rxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6s-t1-7yH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3452" y="214"/>
+            <point key="canvasLocation" x="4354" y="214"/>
         </scene>
         <!--Новости-->
         <scene sceneID="I55-XH-Jon">
@@ -231,6 +277,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpm-xe-ex5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1678" y="214"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rjf-lO-2HE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dRd-4l-ydb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ibA-rP-Ia9">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QvV-Is-BkV" kind="relationship" relationship="rootViewController" id="08z-OQ-I0b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nzj-NV-Opt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3452" y="213.64317841079463"/>
         </scene>
     </scenes>
 </document>
