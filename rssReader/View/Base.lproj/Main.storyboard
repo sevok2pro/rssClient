@@ -79,6 +79,9 @@
                                     </subviews>
                                     <gestureRecognizers/>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="newsImage" destination="1v2-CU-5au" id="k7f-l1-kp6"/>

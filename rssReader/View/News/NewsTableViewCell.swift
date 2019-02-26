@@ -15,7 +15,7 @@ class NewsTableViewCell: UITableViewCell {
     
     var onTapHandler: (() -> Void)? = nil
     
-    @objc func tapEdit(_ sender: UITapGestureRecognizer) {
+    @objc func onTapHandler(_ sender: UITapGestureRecognizer) {
         if(self.onTapHandler != nil) {
             self.onTapHandler!()
         }
@@ -27,7 +27,7 @@ class NewsTableViewCell: UITableViewCell {
         let gestureRecognizer: UIGestureRecognizer =
             UITapGestureRecognizer(
                 target: self,
-                action: #selector(self.tapEdit(_:))
+                action: #selector(self.onTapHandler(_:))
             )
         self.addGestureRecognizer(gestureRecognizer)
     }
