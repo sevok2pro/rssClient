@@ -41,14 +41,21 @@ class SubscriptionsTableViewController: UITableViewController {
         return subscriptions.count
     }
 
-    
+    func handleSwitch(subscription: String) -> ((_ switchState: Bool) -> Void) {
+        func switchHandler(_ switchState: Bool) -> Void {
+            switchState
+                ? userData.userSubscriptionsStorage.addSubscription(uid: subscription)
+                : userData.userSubscriptionsStorage.removeSubscription(uid: subscription)
+        }
+        return switchHandler
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionCell", for: indexPath) as? SubscriptionTableViewCell else {
             fatalError("can not find cell with identity subscriptionCell");
         }
         cell.name.text = subscriptions[indexPath.row];
-        cell.uid = subscriptions[indexPath.row];
+        cell.onSwitchHandler = self.handleSwitch(subscription: subscriptions[indexPath.row])
         cell.switch.setOn(userData.userSubscriptionsStorage.checkSubscription(uid: subscriptions[indexPath.row]), animated: false);
         
         return cell

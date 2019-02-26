@@ -11,7 +11,8 @@ import UIKit
 class SubscriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var `switch`: UISwitch!
     @IBOutlet weak var name: UILabel!
-    var uid: String = "";
+    // TODO: replace boolean argument with named argument
+    var onSwitchHandler: ((_ switchState: Bool) -> Void)?;
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,11 +26,7 @@ class SubscriptionTableViewCell: UITableViewCell {
     }
     
     @IBAction func onSwitch(_ sender: UISwitch) {
-        if(self.uid != "") {
-            self.switch.isOn
-                ? userData.userSubscriptionsStorage.addSubscription(uid: self.uid)
-                : userData.userSubscriptionsStorage.removeSubscription(uid: self.uid)
-        }
+        self.onSwitchHandler!(self.switch.isOn);
     }
     
 }
