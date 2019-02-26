@@ -78,19 +78,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E70517D12223B212007DF013 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				E758E20D2213E0E500775AC9 /* SubscriptionsDataProvider.swift */,
-				E758E2112213E6F200775AC9 /* UserData.swift */,
-				E7BB2F07221987E80005605C /* NewsDataProvider.swift */,
-				E758E2072212C31800775AC9 /* NewsStorage.swift */,
-				E70517DB2223F4F3007DF013 /* SubscriptionsStorage.swift */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-			usesTabs = 0;
-		};
 		E70517D22223B302007DF013 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +108,18 @@
 			path = Subscriptions;
 			sourceTree = "<group>";
 		};
+		E70517DD2224DBA1007DF013 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E758E20D2213E0E500775AC9 /* SubscriptionsDataProvider.swift */,
+				E758E2112213E6F200775AC9 /* UserData.swift */,
+				E7BB2F07221987E80005605C /* NewsDataProvider.swift */,
+				E758E2072212C31800775AC9 /* NewsStorage.swift */,
+				E70517DB2223F4F3007DF013 /* SubscriptionsStorage.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E776CA21220D5E0F004694EB = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +141,8 @@
 		E776CA2C220D5E0F004694EB /* rssReader */ = {
 			isa = PBXGroup;
 			children = (
+				E70517DD2224DBA1007DF013 /* Services */,
 				E70517D22223B302007DF013 /* View */,
-				E70517D12223B212007DF013 /* Services */,
 				E776CA2D220D5E0F004694EB /* AppDelegate.swift */,
 				E776CA34220D5E12004694EB /* Assets.xcassets */,
 				E776CA36220D5E12004694EB /* LaunchScreen.storyboard */,
