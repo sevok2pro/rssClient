@@ -114,9 +114,10 @@ class NewsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let message: String = sender as! String;
-        let destinationViewController: FullNewsViewController = segue.destination as! FullNewsViewController;
-        destinationViewController.newsLink = message
+        if let nextViewController = segue.destination as? FullNewsViewController {
+            let message: String = sender as! String;
+            nextViewController.newsLink = message;
+        }
     }
  
 
