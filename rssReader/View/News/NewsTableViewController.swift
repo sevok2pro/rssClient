@@ -10,8 +10,8 @@ import UIKit
 import RxSwift
 
 class NewsTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    let filters = ["Все новости", "Избранные новости"]
+    let filters = ["Все новости", "Избранные новости"];
+    var news: Array<RssNews> = [];
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -24,8 +24,6 @@ class NewsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.filters[row]
     }
-    
-    var notes: Array<RssNews> = [];
     
     @IBOutlet weak var newsFilter: UIBarButtonItem!
     
@@ -63,7 +61,7 @@ class NewsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         _ = newsStorage
             .observeNotes()
             .subscribe(onNext: {next in
-                self.notes = next;
+                self.news = next;
                 self.tableView.reloadData();
             })
         
@@ -75,7 +73,7 @@ class NewsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notes.count
+        return news.count
     }
 
     func tap(link: String) -> () -> Void {
@@ -89,7 +87,7 @@ class NewsTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoteListTableViewCell", for: indexPath) as? NewsTableViewCell else {
             fatalError("can not view this cell type")
         }
-        let news: RssNews = notes[indexPath.row];
+        let news: RssNews = self.news[indexPath.row];
         cell.newsTitle.text = news.title;
         cell.newsShortDescription.text = news.description;
         cell.onTapHandler = tap(link: news.link)
